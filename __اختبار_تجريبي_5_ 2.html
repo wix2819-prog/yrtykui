@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>اختبار تجريبي (5 أسئلة)</title>
+<style>
+body { font-family: Tahoma; direction: rtl; margin: 20px; }
+.question { border: 1px solid #aaa; padding: 15px; margin-bottom: 20px; border-radius: 6px; }
+.result { font-weight: bold; margin-top: 10px; }
+.correct { color: green; display:none; }
+.wrong { color: red; display:none; }
+</style>
+<script>
+function checkAnswer(qNum, correctAnswer) {
+  var options = document.getElementsByName("q"+qNum);
+  var selected = "";
+  for(var i=0; i<options.length; i++){
+    if(options[i].checked){
+      selected = options[i].value;
+    }
+  }
+  if(selected === correctAnswer){
+    document.getElementById("correct"+qNum).style.display = "block";
+    document.getElementById("wrong"+qNum).style.display = "none";
+  } else if(selected !== ""){
+    document.getElementById("wrong"+qNum).style.display = "block";
+    document.getElementById("correct"+qNum).style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+
+<h2>📘 اختبار تجريبي (5 أسئلة)</h2>
+
+<div class="question">
+  <p><b>س1:</b> يوجد ثلاث نقاط فوق كلمة (لا ريب)، (وفيه) في قوله تعالى: {لا ريب فيه هدى للمتقين} وهذا يعني:</p>
+  <label><input type="radio" name="q1" value="أ"> أ- وجوب الوقوف على كلمة (ريب فيه)</label><br>
+  <label><input type="radio" name="q1" value="ب"> ب- وجوب الوقوف على (ريب) دون (فيه)</label><br>
+  <label><input type="radio" name="q1" value="ج"> ج- عدم جواز الوقوف على أي واحدة منهما</label><br>
+  <label><input type="radio" name="q1" value="د"> د- إذا وقف على إحداها فلا يوقف عند الأخرى</label><br>
+  <button onclick="checkAnswer(1, 'د')">تحقق</button>
+  <p id="correct1" class="result correct">✅ إجابة صحيحة</p>
+  <p id="wrong1" class="result wrong">❌ إجابة خاطئة</p>
+</div>
+
+<div class="question">
+  <p><b>س2:</b> من أنواع اللحن الجلي الذي يبطل الصلاة:</p>
+  <label><input type="radio" name="q2" value="أ"> أ- أتممت بضم التاء</label><br>
+  <label><input type="radio" name="q2" value="ب"> ب- أتمت بضم التاء</label><br>
+  <label><input type="radio" name="q2" value="ج"> ج- تمد بضم الباء</label><br>
+  <label><input type="radio" name="q2" value="د"> د- تمد بكسر الباء</label><br>
+  <button onclick="checkAnswer(2, 'أ')">تحقق</button>
+  <p id="correct2" class="result correct">✅ إجابة صحيحة</p>
+  <p id="wrong2" class="result wrong">❌ إجابة خاطئة</p>
+</div>
+
+<div class="question">
+  <p><b>س3:</b> الضابط المستنبط من خصائص الأسلوب في السور المكية مما يلي:</p>
+  <label><input type="radio" name="q3" value="أ"> أ- إثبات الرسالة والبعث</label><br>
+  <label><input type="radio" name="q3" value="ب"> ب- إثبات الوحدانية</label><br>
+  <label><input type="radio" name="q3" value="ج"> ج- تشريع الفرائض والحدود</label><br>
+  <label><input type="radio" name="q3" value="د"> د- ذكر قصص الأنبياء والأمم السابقة</label><br>
+  <button onclick="checkAnswer(3, 'ج')">تحقق</button>
+  <p id="correct3" class="result correct">✅ إجابة صحيحة</p>
+  <p id="wrong3" class="result wrong">❌ إجابة خاطئة</p>
+</div>
+
+<div class="question">
+  <p><b>س4:</b> قول النبي ﷺ: "ألا إني نهيتكم عن زيارة القبور ألا فزوروها فإنها تذكر بالآخرة" فهذا الحديث في علم المصطلح مثال على:</p>
+  <label><input type="radio" name="q4" value="أ"> أ- النسخ</label><br>
+  <label><input type="radio" name="q4" value="ب"> ب- التواتر</label><br>
+  <label><input type="radio" name="q4" value="ج"> ج- الشذوذ</label><br>
+  <label><input type="radio" name="q4" value="د"> د- الاعتبار</label><br>
+  <button onclick="checkAnswer(4, 'أ')">تحقق</button>
+  <p id="correct4" class="result correct">✅ إجابة صحيحة</p>
+  <p id="wrong4" class="result wrong">❌ إجابة خاطئة</p>
+</div>
+
+<div class="question">
+  <p><b>س5:</b> من أقسام مصادر السيرة النبوية (المصادر التكملية)، ويُدرج تحتها كتب:</p>
+  <label><input type="radio" name="q5" value="أ"> أ- دواوين الأحاديث النبوية</label><br>
+  <label><input type="radio" name="q5" value="ب"> ب- الشمائل والخصائص النبوية</label><br>
+  <label><input type="radio" name="q5" value="ج"> ج- معاجم الصحابة، وكتب الأنساب</label><br>
+  <label><input type="radio" name="q5" value="د"> د- المغازي والسير ودلائل النبوة</label><br>
+  <button onclick="checkAnswer(5, 'د')">تحقق</button>
+  <p id="correct5" class="result correct">✅ إجابة صحيحة</p>
+  <p id="wrong5" class="result wrong">❌ إجابة خاطئة</p>
+</div>
+
+</body>
+</html>
